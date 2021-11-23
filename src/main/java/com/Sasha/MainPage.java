@@ -24,9 +24,7 @@ public class MainPage {
     }
 
     public TrashPage openTrash(){
-        driver.findElement(trash).isDisplayed();
+        driver.findElement(trash).click();
         return new TrashPage(driver);
     }
-
-
 }

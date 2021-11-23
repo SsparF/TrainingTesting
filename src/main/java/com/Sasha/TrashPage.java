@@ -6,7 +6,8 @@ import org.openqa.selenium.WebDriver;
 public class TrashPage {
 
     protected WebDriver driver;
-    private By label=new By.ByLinkText("Корзина");
+    private By label=new By.ByCssSelector("span.BasketTabsScreen_title__2NSA4");
+    ////span[@class='BasketTabsScreen_title__2NSA4' and contains(text(),'Корзина')]
 
     public TrashPage(WebDriver driver) {
         this.driver=driver;
