@@ -1,4 +1,5 @@
-package com.Sasha;
+package com.Sasha.shop21vek;
+import com.Sasha.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -8,6 +9,7 @@ import org.openqa.selenium.WebElement;
 public class MainPage extends BasePage {
 
     public MainPage(WebDriver driver) {
+
         super(driver);
     }
 

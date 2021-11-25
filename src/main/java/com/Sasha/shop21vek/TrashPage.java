@@ -1,15 +1,15 @@
-package com.Sasha;
+package com.Sasha.shop21vek;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.Sasha.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
-public class TrashPage extends  BasePage {
+public class TrashPage extends BasePage {
 
     private By label=new By.ByCssSelector("span.BasketTabsScreen_title__2NSA4");
     private By firstProdName=new By.ByCssSelector("td.cr-basket__name > a");
@@ -28,6 +28,7 @@ public class TrashPage extends  BasePage {
         return trashesNames.stream().map(el->el.getText()).collect(Collectors.toList());
     }
 
+    @Override
     public boolean isOpened() {
         return driver.findElement(label).isDisplayed();
     }

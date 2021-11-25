@@ -1,9 +1,10 @@
-package com.Sasha;
+package com.Sasha.shop21vek;
 
+import com.Sasha.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class BasketTest extends BaseTest{
+public class BasketTest extends BaseTest {
 
     @Test
     public void test() {

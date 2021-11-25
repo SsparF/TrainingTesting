@@ -1,5 +1,6 @@
-package com.Sasha;
+package com.Sasha.shop21vek;
 
+import com.Sasha.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
