@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class SearchPage extends BasePage {
 
@@ -20,12 +21,14 @@ public class SearchPage extends BasePage {
     @Override
     public boolean isOpened(){return driver.findElement(label).isDisplayed();}
 
-    public ProductPage openProductPage() {
-
+    public ProductPage openSearchItem(int index) {
         List<WebElement> products=driver.findElements(selectedProduct);
-        Random rand = new Random();
-        int randomProduct = rand.nextInt(products.size());
-        products.get(randomProduct).click();
+        products.get(index).click();
         return new ProductPage(driver);
+    }
+
+    public List<String> getSearchItemsNames(){
+        List<WebElement> products=driver.findElements(selectedProduct);
+        return products.stream().map(el->el.getText()).collect(Collectors.toList());
     }
 }

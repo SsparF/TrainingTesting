@@ -1,8 +1,10 @@
 package com.Sasha.shop21vek;
 
 import com.Sasha.BasePage;
+import com.Sasha.constants.TimeConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HelpModalPage extends BasePage {
 
@@ -15,7 +17,7 @@ public class HelpModalPage extends BasePage {
     @Override
     public boolean isOpened() {
         //return driver.findElement(closeButt).isDisplayed();
-        return WaitUntilElementPresence(closeButt);
+        return WaitUntil(TimeConstants.PAGE_LOAD_TIMEOUT, ExpectedConditions.presenceOfElementLocated(closeButt));
     }
 
     public void closeModPage() {

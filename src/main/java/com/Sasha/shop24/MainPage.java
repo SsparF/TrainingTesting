@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 
 public class MainPage extends BasePage {
 
-    public String inputValue="Дрель";
     private By logoImg=new By.ByXPath("//img[@class='hidden-xs']");
     private By searchBox=new By.ByXPath("//input[@class='top-search__input white-input js-top-search-input']");
 
@@ -23,10 +22,10 @@ public class MainPage extends BasePage {
     @Override
     public boolean isOpened(){return driver.findElement(logoImg).isDisplayed();}
 
-    public SearchPage searchProduct(){
+    public SearchPage searchProduct(String input){
         WebElement searchInput=driver.findElement(searchBox);
         searchInput.click();
-        searchInput.sendKeys(inputValue+ Keys.ENTER);
+        searchInput.sendKeys(input+ Keys.ENTER);
         return new SearchPage(driver);
     }
 }

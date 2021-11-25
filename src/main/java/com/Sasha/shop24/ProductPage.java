@@ -4,6 +4,7 @@ import com.Sasha.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,16 +22,8 @@ public class ProductPage extends BasePage {
         return driver.findElement(buyButton).isDisplayed();
     }
 
-    public boolean nameContains(){
-        MainPage mainPage=new MainPage(driver);
+    public boolean nameContains(String name){
         String prodName=driver.findElement(title).getText();
-        //System.out.println(prodName);
-        Pattern p=Pattern.compile("(^)?(Д|д)рель");
-        Matcher m=p.matcher(prodName);
-        while (m.find())
-        {
-            return true;
-        }
-        return false;
+        return prodName.toLowerCase(Locale.ROOT).contains(name.toLowerCase(Locale.ROOT));
     }
 }

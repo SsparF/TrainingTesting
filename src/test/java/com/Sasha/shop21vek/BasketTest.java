@@ -10,13 +10,10 @@ public class BasketTest extends BaseTest {
     public void test() {
         MainPage mainPage = new MainPage(driver);
         mainPage.open();
-        Assert.assertTrue(mainPage.isOpened());
-        mainPage.searchProd();
-        ProductPage goodPage = new ProductPage(driver);
+        ProductPage goodPage = mainPage.searchProd();
         Assert.assertTrue(goodPage.isOpened());
         String nameOfSelectedProduct = goodPage.addInBasket().getText();
-        goodPage.openBasket();
-        TrashPage trashPage = new TrashPage(driver);
+        TrashPage trashPage = goodPage.openBasket();
         Assert.assertEquals(nameOfSelectedProduct,trashPage.getTrashesNames().get(0));
     }
 }

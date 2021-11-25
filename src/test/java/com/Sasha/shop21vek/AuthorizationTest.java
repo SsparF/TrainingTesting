@@ -10,12 +10,10 @@ public class AuthorizationTest extends BaseTest {
     public void test() {
         MainPage mainPage = new MainPage(driver);
         mainPage.open();
-        Assert.assertTrue(mainPage.isOpened());
-        mainPage.goToLogin();
-        LoginPage loginPage=new LoginPage(driver);
+        LoginModalPage loginPage=mainPage.goToLogin();
         Assert.assertTrue(loginPage.isOpened());
-        loginPage.authorization();
-        MainPage mainPage1=new MainPage(driver);
-        Assert.assertTrue(mainPage1.isOpened());
+        mainPage=loginPage.authorization("sashaparfiak007@gmail.com","I5LBn4Dm");
+        Assert.assertTrue(mainPage.isOpened());
+        Assert.assertEquals("sashaparfiak007@gmail.com", mainPage.getAuthorizedEmail());
     }
 }
